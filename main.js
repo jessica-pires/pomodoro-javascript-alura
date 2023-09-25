@@ -32,21 +32,25 @@ musicaFocoInput.addEventListener('change', () => {
 })
 
 botaoFoco.addEventListener('click' , () =>{
+    tempoDecorridoEmSegundos = 1500
     alterarContexto('foco')
     botaoFoco.classList.add('active')
 })
 
 botaoDescansoCurto.addEventListener('click', () =>{
+    tempoDecorridoEmSegundos = 300
     alterarContexto('descanso-curto')
     botaoDescansoCurto.classList.add('active')
 })
 
 botaoDescansolongo.addEventListener('click' , () => {
+    tempoDecorridoEmSegundos = 900
     alterarContexto('descanso-longo')
     botaoDescansolongo.classList.add("active")
 })
 
 function alterarContexto(contexto) {
+    mostrarTempo()
     botoes.forEach(function (contexto){
         contexto.classList.remove('active')
     })
